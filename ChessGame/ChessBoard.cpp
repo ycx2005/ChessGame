@@ -55,15 +55,28 @@ void ChessBoard::showBoard() {
 	std::cout << "BOARD STATE" << std::endl;
 	for (int i = 0; i < MAX_ROW; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
-			if (m_board[i][j] != nullptr)
-			{
+			if (m_board[i][j] != nullptr) {
 				std::cout << m_board[i][j]->toString() << " ";
 			}
-			else
-			{
+			else {
 				std::cout << "X" << " ";
 			}
 		}
-		std::cout<< std::endl;
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
+void ChessBoard::movePiece(Position initialPos, Position finalPos) {
+	//INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD MOVE A PIECE TO THE DESIRED POSITION, ONLY IF POSSIBLE (EMPTY SPACE).
+	int startX = initialPos.getX();
+	int startY = initialPos.getY();
+
+	int endX = finalPos.getX();
+	int endY = finalPos.getY();
+
+	if(m_board[endX][endY] == nullptr) {
+		m_board[endX][endY] = m_board[startX][startY];
+		m_board[startX][startY] = nullptr;
 	}
 }

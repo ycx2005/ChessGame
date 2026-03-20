@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <vector>
+#include "Position.h"
 
 typedef enum {
 	WHITE,
@@ -13,7 +15,9 @@ public:
 	virtual ~ChessPiece() = default;
 	int getColor() const { return m_color; }
 
-	virtual std::string toString() { return "Error"; }
-private:
+	virtual Position getPossiblePositions() = 0;
+	virtual std::string toString() = 0;
+protected:
 	int m_color;
+	std::vector<Position> m_possiblePositions;
 };

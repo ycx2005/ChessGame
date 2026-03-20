@@ -53,5 +53,8 @@
     <ClInclude Include="Pawn.h">
       <Filter>Header Files\PieceTypes</Filter>
     </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

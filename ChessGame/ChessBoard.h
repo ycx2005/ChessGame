@@ -18,6 +18,8 @@ public:
 	void initializeBoard();
 	void clearBoard();
 	void showBoard();
+	ChessPiece* getPiece(int x, int y) const { return m_board[x][y]; }
+	void movePiece(Position initialPos, Position finalPos);
 private:
 	ChessPiece* m_board[MAX_ROW][MAX_COL];
 };
