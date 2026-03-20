@@ -1,4 +1,11 @@
 #include "ChessBoard.h"
+//chess pieces
+#include "Rook.h"
+#include "Knight.h"
+#include "Bishop.h"
+#include "King.h"
+#include "Queen.h"
+#include "Pawn.h"
 
 ChessBoard::ChessBoard() {
 	for (int i = 0; i < MAX_ROW; i++)
@@ -46,6 +53,7 @@ void ChessBoard::clearBoard() {
 	for (int i = 0; i < MAX_ROW; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
 			delete m_board[i][j];
+			m_board[i][j] = nullptr;
 		}
 	}
 }
