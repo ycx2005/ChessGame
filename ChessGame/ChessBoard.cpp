@@ -23,6 +23,8 @@ void ChessBoard::initializeBoard() {
 		m_board[1][i] = new Pawn(BLACK);
 		m_board[6][i] = new Pawn(WHITE);
 	}
+	//m_board[2][5] = new Pawn(WHITE); //checking if knight takes
+
 	m_board[0][0] = new Rook(BLACK);
 	m_board[0][7] = new Rook(BLACK);
 
@@ -58,7 +60,7 @@ void ChessBoard::clearBoard() {
 	}
 }
 
-void ChessBoard::showBoard() {
+void ChessBoard::showBoard() const {
 	//INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD SHOW THE STATE OF THE BOARD IN THE CONSOLE.
 	std::cout << "BOARD STATE" << std::endl;
 	for (int i = 0; i < MAX_ROW; i++) {
@@ -77,21 +79,35 @@ void ChessBoard::showBoard() {
 
 void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	//INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD MOVE A PIECE TO THE DESIRED POSITION, ONLY IF POSSIBLE (EMPTY SPACE).
-	//missing boundary checks (i don't think i need to implement it here if it's already being checked by the getpossiblepositions functions)
+	//missing boundary checks (I don't think I need to implement it here if it's already being checked by the getpossiblepositions functions)
 	int startX = initialPos.getX();
 	int startY = initialPos.getY();
 
 	int endX = finalPos.getX();
 	int endY = finalPos.getY();
 
+	bool possible = false;
 	//missing the logic
 	std::vector<Position> possiblePos = getPiece(startX, startY)->getPossiblePositions(this, startX, startY);
 	for (std::vector<Position>::iterator it = possiblePos.begin(); it != possiblePos.end(); ++it) {
-		break;
+		if (*it == finalPos) {
+			possible = true;
+		}
 	}
 
-	if(m_board[endX][endY] == nullptr) {
+	if (possible) {
+		if (m_board[endX][endY] != nullptr) {
+			std::cout << m_board[startX][startY]->toString() << " takes " << m_board[endX][endY]->toString() << std::endl;
+		}
 		m_board[endX][endY] = m_board[startX][startY];
 		m_board[startX][startY] = nullptr;
 	}
+	else {
+		std::cout<<"Movement not possible."<<std::endl;
+	}
+}
+
+void ChessBoard::putPiece(ChessPiece* piece, Position position) {
+	//INITIAL IMPLEMENTATION: FUNCTION DESIGNED TO PUT A NEW PIECE OF CHOICE IN THE BOARD.
+
 }

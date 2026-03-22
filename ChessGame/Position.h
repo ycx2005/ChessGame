@@ -6,7 +6,8 @@ public:
 	Position(int x, int y) { m_posX = x; m_posY = y; }
 	int getX() const { return m_posX; }
 	int getY() const { return m_posY; }
-	//missing == operator
+
+	bool operator==(Position pos) const { return (m_posX == pos.m_posX && m_posY == pos.m_posY); }
 private:
 	int m_posX;
 	int m_posY;

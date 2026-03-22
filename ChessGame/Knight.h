@@ -4,7 +4,7 @@
 class Knight : public ChessPiece {
 public:
 	Knight(int color) : ChessPiece(color) {}
-	std::string toString() override { return "N"; }
+	std::string toString() override;
 	std::vector<Position> getPossiblePositions(ChessBoard* board, int currentX, int currentY) override;
 private:
 	int m_value = 3;

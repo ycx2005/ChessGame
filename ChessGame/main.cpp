@@ -1,4 +1,4 @@
-#include <iostream>;
+#include <iostream>
 #include "ChessBoard.h"
 
 int main() {
@@ -8,5 +8,7 @@ int main() {
 	tauler.movePiece(Position(0, 1), Position(2, 2));
 	std::cout << tauler.getPiece(7, 1)->getColor();
 	std::cout << std::endl;
+	tauler.showBoard();
+	tauler.movePiece(Position(0, 6), Position(2, 5));
 	tauler.showBoard();
 }
