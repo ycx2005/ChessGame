@@ -77,11 +77,18 @@ void ChessBoard::showBoard() {
 
 void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	//INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD MOVE A PIECE TO THE DESIRED POSITION, ONLY IF POSSIBLE (EMPTY SPACE).
+	//missing boundary checks (i don't think i need to implement it here if it's already being checked by the getpossiblepositions functions)
 	int startX = initialPos.getX();
 	int startY = initialPos.getY();
 
 	int endX = finalPos.getX();
 	int endY = finalPos.getY();
+
+	//missing the logic
+	std::vector<Position> possiblePos = getPiece(startX, startY)->getPossiblePositions(this, startX, startY);
+	for (std::vector<Position>::iterator it = possiblePos.begin(); it != possiblePos.end(); ++it) {
+		break;
+	}
 
 	if(m_board[endX][endY] == nullptr) {
 		m_board[endX][endY] = m_board[startX][startY];
