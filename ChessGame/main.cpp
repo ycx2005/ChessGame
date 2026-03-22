@@ -9,6 +9,7 @@ int main() {
 	std::cout << tauler.getPiece(7, 1)->getColor();
 	std::cout << std::endl;
 	tauler.showBoard();
-	tauler.movePiece(Position(0, 6), Position(2, 5));
+	tauler.movePiece(Position(1, 6), Position(2, 7));
+	tauler.movePiece(Position(1, 6), Position(4, 6));
 	tauler.showBoard();
 }

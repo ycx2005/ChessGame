@@ -1,4 +1,5 @@
 #include "ChessBoard.h"
+#include <iomanip>
 //chess pieces
 #include "Rook.h"
 #include "Knight.h"
@@ -23,7 +24,7 @@ void ChessBoard::initializeBoard() {
 		m_board[1][i] = new Pawn(BLACK);
 		m_board[6][i] = new Pawn(WHITE);
 	}
-	//m_board[2][5] = new Pawn(WHITE); //checking if knight takes
+	m_board[2][5] = new Pawn(WHITE); //checking if the black piece takes
 
 	m_board[0][0] = new Rook(BLACK);
 	m_board[0][7] = new Rook(BLACK);
@@ -66,10 +67,11 @@ void ChessBoard::showBoard() const {
 	for (int i = 0; i < MAX_ROW; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
 			if (m_board[i][j] != nullptr) {
-				std::cout << m_board[i][j]->toString() << " ";
+				// std::setw(3) forces this column to be exactly 3 characters wide
+				std::cout << std::setw(3) << m_board[i][j]->toString();
 			}
 			else {
-				std::cout << "X" << " ";
+				std::cout << std::setw(3) << "X";
 			}
 		}
 		std::cout << std::endl;
@@ -97,7 +99,7 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 
 	if (possible) {
 		if (m_board[endX][endY] != nullptr) {
-			std::cout << m_board[startX][startY]->toString() << " takes " << m_board[endX][endY]->toString() << std::endl;
+			std::cout << m_board[startX][startY]->toString() << " takes " << m_board[endX][endY]->toString() << "." << std::endl;
 		}
 		m_board[endX][endY] = m_board[startX][startY];
 		m_board[startX][startY] = nullptr;
