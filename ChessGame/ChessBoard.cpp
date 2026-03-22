@@ -24,7 +24,6 @@ void ChessBoard::initializeBoard() {
 		m_board[1][i] = new Pawn(BLACK);
 		m_board[6][i] = new Pawn(WHITE);
 	}
-	m_board[2][5] = new Pawn(WHITE); //checking if the black piece takes
 
 	m_board[0][0] = new Rook(BLACK);
 	m_board[0][7] = new Rook(BLACK);
@@ -85,6 +84,10 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	int startX = initialPos.getX();
 	int startY = initialPos.getY();
 
+	if (m_board[startX][startY] == nullptr) {
+		std::cout<<"Movement not possible."<<std::endl;
+		return;
+	}
 	int endX = finalPos.getX();
 	int endY = finalPos.getY();
 
@@ -100,6 +103,8 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	if (possible) {
 		if (m_board[endX][endY] != nullptr) {
 			std::cout << m_board[startX][startY]->toString() << " takes " << m_board[endX][endY]->toString() << "." << std::endl;
+			delete m_board[endX][endY];
+
 		}
 		m_board[endX][endY] = m_board[startX][startY];
 		m_board[startX][startY] = nullptr;
@@ -110,6 +115,11 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 }
 
 void ChessBoard::putPiece(ChessPiece* piece, Position position) {
-	//INITIAL IMPLEMENTATION: FUNCTION DESIGNED TO PUT A NEW PIECE OF CHOICE IN THE BOARD.
-
+	//INITIAL IMPLEMENTATION: FUNCTION DESIGNED TO PUT A NEW PIECE OF CHOICE IN THE BOARD. IT MAY HANDLE PROMOTIONS LATER.
+	int posX = position.getX();
+	int posY = position.getY();
+	if (m_board[posX][posY] == nullptr) {
+		m_board[posX][posY] = piece;
+	}
+	std::cout<<piece->toString()<< " created in " << position <<std::endl;
 }

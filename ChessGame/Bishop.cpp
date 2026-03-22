@@ -1,4 +1,5 @@
 #include "Bishop.h"
+#include "ChessBoard.h"
 
 std::string Bishop::toString() {
     if (m_color == WHITE) {
@@ -10,4 +11,10 @@ std::string Bishop::toString() {
     else {
         return "";
     }
+}
+
+std::vector<Position> Bishop::getPossiblePositions(ChessBoard* board, int currentX, int currentY) {
+    //TODO: IMPLEMENT BISHOP MOVEMENT. CAN MOVE DIAGONALLY ANY AMOUNT OF SQARES AS LONG AS THERE ARE NOT PIECES BLOCKING.
+    std::vector<Position> possiblePositions;
+    return possiblePositions;
 }

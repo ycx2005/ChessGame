@@ -14,7 +14,6 @@ std::string Knight::toString() {
 }
 
 std::vector<Position> Knight::getPossiblePositions(ChessBoard* board, int currentX, int currentY) {
-	//TODO: THIS FUNCTION SHOULD RETURN A VECTOR WITH ALL THE POSSIBLE MOVES THAT A KNIGHT CAN MAKE.
 	//INITIAL IMPLEMENTATION: THIS FUNCTION CAN FIND ALL THE POSITIONS THAT A KNIGHT CAN JUMP TO AND ADDS THEM ALL INTO THE VECTOR.
 	static const int knightMoves[8][2] = {
 		{-2, -1}, {-2, 1},

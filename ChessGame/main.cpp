@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ChessBoard.h"
+#include "Pawn.h"
 
 int main() {
 	ChessBoard tauler;
@@ -9,7 +10,12 @@ int main() {
 	std::cout << tauler.getPiece(7, 1)->getColor();
 	std::cout << std::endl;
 	tauler.showBoard();
-	tauler.movePiece(Position(1, 6), Position(2, 7));
+
+	Pawn* piece = new Pawn(WHITE);
+	tauler.putPiece(piece, Position(2, 5));
+	tauler.showBoard();
+	tauler.movePiece(Position(1, 6), Position(2, 5));
+	tauler.showBoard();
 	tauler.movePiece(Position(1, 6), Position(4, 6));
 	tauler.showBoard();
 }
