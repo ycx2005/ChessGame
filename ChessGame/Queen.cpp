@@ -40,6 +40,7 @@ std::vector<Position> Queen::getPossiblePositions(ChessBoard* board, int current
                 possiblePositions.push_back(Position(posX, posY));
             }
             else {
+                //it adds a position because it can take a piece here
                 if (board->getPiece(posX, posY)->getColor() != m_color) {
                     possiblePositions.push_back(Position(posX, posY));
                 }

@@ -78,7 +78,7 @@ void ChessBoard::showBoard() const {
 	std::cout << std::endl;
 }
 
-void ChessBoard::movePiece(Position initialPos, Position finalPos) {
+bool ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	//INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD MOVE A PIECE TO THE DESIRED POSITION, ONLY IF POSSIBLE (EMPTY SPACE).
 	//missing boundary checks (I don't think I need to implement it here if it's already being checked by the getpossiblepositions functions)
 	int startX = initialPos.getX();
@@ -108,9 +108,11 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 		}
 		m_board[endX][endY] = m_board[startX][startY];
 		m_board[startX][startY] = nullptr;
+		return true;
 	}
 	else {
 		std::cout<<"Movement not possible."<<std::endl;
+		return false;
 	}
 }
 

@@ -30,22 +30,25 @@
     <ClCompile Include="ChessBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Knight.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Rook.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PieceTypes</Filter>
     </ClCompile>
     <ClCompile Include="Queen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PieceTypes</Filter>
     </ClCompile>
     <ClCompile Include="Pawn.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PieceTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Source Files\PieceTypes</Filter>
     </ClCompile>
     <ClCompile Include="King.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\PieceTypes</Filter>
     </ClCompile>
     <ClCompile Include="Bishop.cpp">
+      <Filter>Source Files\PieceTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Chess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,6 +75,9 @@
       <Filter>Header Files\PieceTypes</Filter>
     </ClInclude>
     <ClInclude Include="Position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

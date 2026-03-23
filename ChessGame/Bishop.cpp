@@ -38,6 +38,7 @@ std::vector<Position> Bishop::getPossiblePositions(ChessBoard* board, int curren
                 possiblePositions.push_back(Position(posX, posY));
             }
             else {
+                //it adds a position because it can take a piece here
                 if (board->getPiece(posX, posY)->getColor() != m_color) {
                     possiblePositions.push_back(Position(posX, posY));
                 }
