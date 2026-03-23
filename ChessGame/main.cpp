@@ -1,5 +1,7 @@
 #include <iostream>
 #include "ChessBoard.h"
+
+#include "King.h"
 #include "Pawn.h"
 
 int main() {
@@ -7,15 +9,16 @@ int main() {
 	tauler.initializeBoard();
 	tauler.showBoard();
 	tauler.movePiece(Position(0, 1), Position(2, 2));
-	std::cout << tauler.getPiece(7, 1)->getColor();
-	std::cout << std::endl;
+	tauler.showBoard();
+	tauler.movePiece(Position(1, 2), Position(2, 2)); //it doesn't show this move
+	tauler.movePiece(Position(1, 7), Position(3, 7));
 	tauler.showBoard();
 
-	Pawn* piece = new Pawn(WHITE);
-	tauler.putPiece(piece, Position(2, 5));
+	King* king = new King(WHITE);
+	Pawn* pawn = new Pawn(BLACK);
+	tauler.putPiece(king, Position(4, 4));
+	tauler.putPiece(pawn, Position(5, 4));
 	tauler.showBoard();
-	tauler.movePiece(Position(1, 6), Position(2, 5));
-	tauler.showBoard();
-	tauler.movePiece(Position(1, 6), Position(4, 6));
+	tauler.movePiece(Position(4, 4), Position(5, 4));
 	tauler.showBoard();
 }

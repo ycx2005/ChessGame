@@ -26,7 +26,8 @@ std::vector<Position> Knight::getPossiblePositions(ChessBoard* board, int curren
 		int finalX = currentX + knightMoves[i][0];
 		int finalY = currentY + knightMoves[i][1];
 		Position finalPos(finalX, finalY);
-		if ((finalY >= 0 && finalY < 8 && finalX >= 0 && finalX < 8) && (board->getPiece(finalX, finalY) == nullptr || board->getPiece(finalX, finalY)->getColor() != this->getColor())) {
+		if ((finalY >= 0 && finalY < 8 && finalX >= 0 && finalX < 8) && (board->getPiece(finalX, finalY) == nullptr 
+				|| board->getPiece(finalX, finalY)->getColor() != this->getColor())) {
 			possiblePositions.push_back(finalPos);
 		}
 	}

@@ -92,7 +92,7 @@ void ChessBoard::movePiece(Position initialPos, Position finalPos) {
 	int endY = finalPos.getY();
 
 	bool possible = false;
-	//missing the logic
+	
 	std::vector<Position> possiblePos = getPiece(startX, startY)->getPossiblePositions(this, startX, startY);
 	for (std::vector<Position>::iterator it = possiblePos.begin(); it != possiblePos.end(); ++it) {
 		if (*it == finalPos) {

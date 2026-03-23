@@ -14,7 +14,7 @@ std::string Pawn::toString() {
 }
 
 std::vector<Position> Pawn::getPossiblePositions(ChessBoard* board, int currentX, int currentY) {
-    //FIRST IMPLEMENTATION: THIS FUNCTION SHOULD GET ALL THE POSITIONS THE PAWN CAN TAKE, NOT INCLUDING EN PASSANT AND PROMOTION MECHANICS.
+    //INITIAL IMPLEMENTATION: THIS FUNCTION SHOULD GET ALL THE POSITIONS THE PAWN CAN TAKE, NOT INCLUDING EN PASSANT AND PROMOTION MECHANICS.
     std::vector<Position> possiblePositions;
     int color = m_color;
     if (color == WHITE) {
