@@ -121,5 +121,5 @@ void ChessBoard::putPiece(ChessPiece* piece, Position position) {
 	if (m_board[posX][posY] == nullptr) {
 		m_board[posX][posY] = piece;
 	}
-	std::cout<<piece->toString()<< " created in " << position <<std::endl;
+	std::cout<<piece->toString()<< " created in " << position << ". "<<std::endl;
 }
