@@ -86,7 +86,7 @@ bool ChessBoard::movePiece(Position initialPos, Position finalPos) {
 
 	if (m_board[startX][startY] == nullptr) {
 		std::cout<<"Movement not possible."<<std::endl;
-		return;
+		return false;
 	}
 	int endX = finalPos.getX();
 	int endY = finalPos.getY();

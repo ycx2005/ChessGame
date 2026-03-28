@@ -2,7 +2,7 @@
 #include "ChessBoard.h"
 
 typedef enum {
-	WHITE, BLACK
+	WHITEP, BLACKP
 } PlayerColor;
 
 class Chess {

@@ -3,7 +3,7 @@
 void Chess::playGame() {
 	//TODO: MISSING MOVEMENT IMPLEMENTATION, AS WELL AS TURN CHANGE AND PUNCTUATIONS.
 	m_game.initializeBoard();
-	m_currentTurn = WHITE;
+	m_currentTurn = WHITEP;
 	std::string position;
 	while (!m_isGameOver) {
 		std::cout << "Select the piece (position) you wish to move." << std::endl;
