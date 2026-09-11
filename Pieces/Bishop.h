@@ -14,7 +14,7 @@ public:
     std::vector<Position> getPossiblePositions(ChessBoard* board, int posX, int posY) const override;
     std::string toString() const override;   // Print R
 private:
-    int m_value = 1;
+    int m_value = 3;
 };
 
 

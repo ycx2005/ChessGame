@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include "Pieces/Position.h"
+#include "Position.h"
 
 class ChessBoard;   // We
 
